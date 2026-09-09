@@ -1,0 +1,9 @@
+{
+  "name": "qwen-ollama-assistant",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Premium local AI assistant powered by Ollama and qwen2.5:5b",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

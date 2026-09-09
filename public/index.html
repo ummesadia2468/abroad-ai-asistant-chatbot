@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111316">
+  <title>Atlas | Local AI Assistant</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Conversation navigation">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">A</span><span>atlas</span></div>
+      <button class="new-chat" id="newChat" type="button"><span aria-hidden="true">+</span> New conversation</button>
+      <div class="sidebar-label">Workspace</div>
+      <div class="conversation-card" aria-current="page"><span class="status-dot"></span><span id="conversationLabel">New conversation</span></div>
+      <div class="sidebar-footer"><span class="local-mark" aria-hidden="true">◈</span><span>Local intelligence<br><small>Private by default</small></span></div>
+    </aside>
+
+    <main class="chat-app">
+      <header class="chat-header">
+        <button class="menu-button" id="menuButton" type="button" aria-label="Open navigation">☰</button>
+        <div><div class="eyebrow">PERSONAL AI WORKSPACE</div><h1>Atlas assistant</h1></div>
+        <div class="connection-status"><span class="status-dot"></span><span>Online</span></div>
+      </header>
+
+      <section class="chat-window" id="chatWindow" aria-live="polite" aria-label="Conversation">
+        <div class="welcome" id="welcome">
+          <div class="welcome-orbit" aria-hidden="true"><span></span><span></span><span></span></div>
+          <p class="eyebrow">LOCAL, PRIVATE, CAPABLE</p>
+          <h2>What are you<br><em>working on?</em></h2>
+          <p class="welcome-copy">A thoughtful AI partner for exploring ideas, solving problems, and turning complexity into clear next steps.</p>
+          <div class="suggestions" aria-label="Suggested prompts">
+            <button class="suggestion" data-prompt="Explain a technical concept in a simple, practical way"><span>◇</span>Explain a technical concept</button>
+            <button class="suggestion" data-prompt="Help me solve a problem step by step"><span>↗</span>Help me solve a problem</button>
+            <button class="suggestion" data-prompt="Analyze an idea and identify its strengths and risks"><span>◌</span>Analyze an idea</button>
+            <button class="suggestion" data-prompt="Create a clear step-by-step plan for a project"><span>≡</span>Create a step-by-step plan</button>
+          </div>
+        </div>
+        <div class="message-list" id="messageList"></div>
+        <div class="typing" id="typing" hidden><span class="avatar">A</span><div><span class="typing-label">Atlas is thinking</span><span class="typing-dots"><i></i><i></i><i></i></span></div></div>
+      </section>
+
+      <div class="composer-wrap">
+        <div class="error-banner" id="errorBanner" role="alert" hidden><span id="errorText"></span><button id="retryButton" type="button">Retry</button></div>
+        <form class="composer" id="composer">
+          <label class="sr-only" for="messageInput">Message Atlas</label>
+          <textarea id="messageInput" rows="1" placeholder="Ask Atlas anything..." maxlength="8000"></textarea>
+          <div class="composer-tools"><span>Enter to send <b>·</b> Shift + Enter for a new line</span><button class="send-button" id="sendButton" type="submit" aria-label="Send message">↑</button></div>
+        </form>
+        <p class="privacy-note"><span aria-hidden="true">●</span> Your conversations stay on this device and run through your local Ollama model.</p>
+      </div>
+    </main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
